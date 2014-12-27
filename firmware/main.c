@@ -5,6 +5,9 @@
 int main() {
 	// PB4 as output pin
 	DDRB |= _BV(PB4);
+	PORTB = 0x00;
+
+	for (;;) {
 
 	for (int i = 0; i < 8; ++i) {
 		unsigned char working_byte = code[i];
@@ -28,8 +31,12 @@ int main() {
 			} else {
 				PORTB = 0x00;
 			}
-			_delay_us(343);
+			_delay_us(400);
 		}
+	}
+
+	_delay_ms(1000);
+
 	}
 
 	return 0;

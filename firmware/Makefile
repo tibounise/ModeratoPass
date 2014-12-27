@@ -1,6 +1,6 @@
 # MCU name
-MCU = attiny13
-F_CPU = 9600000
+MCU = atmega1284p
+F_CPU = 8000000
 
 # Output format. (can be srec, ihex, binary)
 FORMAT = ihex
@@ -24,7 +24,7 @@ CFLAGS = -O$(OPT) \
 LDFLAGS =
 
 # Avrdude settings
-AVRDUDE_PROGRAMMER = usbasp
+AVRDUDE_PROGRAMMER = usbtiny
 AVRDUDE_PORT = usb        # programmer connected to serial device
 AVRDUDE_WRITE_FLASH = -B 1 -U flash:w:$(TARGET).hex
 AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER)
